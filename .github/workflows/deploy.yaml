@@ -1,0 +1,42 @@
+name: Create draft release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: hiero-otio${{ github.ref }}
+          body: |
+            Changes in this release
+            * something
+            * something
+
+          draft: true
+          prerelease: false
+
+       - uses: actions/checkout@master
+       - name: Archive Release for Nukepedia
+       uses: thedoctor0/zip-release@master
+       with:
+         filename: 'hiero-otio-release${{ github.ref }}.zip'
+         exclusions: '*.git*'
+
+        - name: Upload Release Archive
+            uses: ncipollo/release-action@v1
+            with:
+              artifacts: "hiero-otio-release${{ github.ref }}.zip"
+              token: ${{ secrets.GITHUB_TOKEN }}
