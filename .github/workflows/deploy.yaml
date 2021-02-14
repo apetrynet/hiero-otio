@@ -29,15 +29,14 @@ jobs:
           draft: true
           prerelease: false
 
-       - uses: actions/checkout@master
-       - name: Archive Release for Nukepedia
-       uses: thedoctor0/zip-release@master
-       with:
-         filename: 'hiero-otio-release${{ github.ref }}.zip'
-         exclusions: '*.git*'
+      - name: Archive Release for Nukepedia
+        uses: thedoctor0/zip-release@master
+        with:
+           filename: 'hiero-otio-release${{ github.ref }}.zip'
+           exclusions: '*.git*'
 
-        - name: Upload Release Archive
-            uses: ncipollo/release-action@v1
-            with:
-              artifacts: "hiero-otio-release${{ github.ref }}.zip"
-              token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Release Archive
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "hiero-otio-release${{ github.ref }}.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
