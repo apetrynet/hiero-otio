@@ -4,7 +4,7 @@
 Import and export `.otio` files directly from Hiero or Nuke Studio
 
 
-##Features
+## Features
 
 * Multiple tracks
 * Tags
@@ -15,7 +15,7 @@ Import and export `.otio` files directly from Hiero or Nuke Studio
 * Linked audio/video when clip shares same media source
    
 
-##Install
+## Install
 
 The easiest way to install the plugin is to unpack the contents to the `.nuke` 
 folder in your "HOME" directory.<br>
@@ -34,12 +34,12 @@ the full path of the folder conatinong the `Python` folder to the
 export HIERO_PLUGIN_PATH=/my/shared/plugin/folder
 ```
 
-###Note
+### Note
 
 Make sure you have OpenTimelineIO available in `PYTHONPATH` before you launch.
 
 
-##Usage OTIO Import
+## Usage OTIO Import
 
 Right click in a project bin and select `"Import->Import OTIO"`
 
@@ -50,7 +50,7 @@ Or you can add tracks to an existing sequence
 ![Import Sequence](_static/import_sequence.png "Import OTIO from a sequence")
 
 
-##Usage OTIOExportTask
+## Usage OTIOExportTask
 
 In Hiero's export dialog choose `"Process as Sequence"` and create a new preset 
 called `"OTIO Export"`.<br>
@@ -64,7 +64,7 @@ the OTIO metadata.<br>
 ![Export Sequence](_static/export_settings.png "Export OTIO file")
 
 
-##Known Limitations
+## Known Limitations
 
 * Tags/markers are applied to both clips and track items on import if no 
   metadata indicates source type. 
