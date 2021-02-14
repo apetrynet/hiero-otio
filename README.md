@@ -27,7 +27,7 @@ For Hiero/Nuke Studio version < 12 extract to the `.hiero` folder.
 ```
 
 If you choose to install the plugin to another location, make sure to append 
-the full path of the folder conatinong the `Python` folder to the 
+the full path of the folder containing the `Python` folder to the 
 `HIERO_PLUGIN_PATH` environment variable.
 
 ```bash
@@ -62,6 +62,8 @@ The `"include tags"` checkbox toggles inclusion of tags assigned to clips in
 the OTIO metadata.<br>
 
 ![Export Sequence](_static/export_settings.png "Export OTIO file")
+
+You may either export entire sequences or selected items in a sequence.
 
 
 ## Known Limitations
