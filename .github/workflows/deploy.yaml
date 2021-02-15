@@ -2,6 +2,9 @@ name: Create draft release
 
 on:
   workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test scenario tags'  
   #push:
     #tags:
       #- '*'
@@ -19,8 +22,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ github.ref }}
-          release_name: hiero-otio${{ github.ref }}
+          #tag_name: ${{ github.ref }}
+          tag_name: ${{ github.event.inputs.tags }}
+          release_name: hiero-otio${{ github.event.inputs.tags }}
+          #release_name: hiero-otio${{ github.ref }}
           body: |
             Changes in this release
             * something
@@ -32,11 +37,13 @@ jobs:
       - name: Create Release Archive for Nukepedia
         uses: thedoctor0/zip-release@master
         with:
-           filename: 'hiero-otio-release${{ github.ref }}.zip'
+           #filename: 'hiero-otio-release${{ github.ref }}.zip'
+           filename: 'hiero-otio-release${{ github.event.inputs.tags }}.zip'
            exclusions: '*.git*'
 
       - name: Upload Release Archive
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "hiero-otio-release${{ github.ref }}.zip"
+          #artifacts: "hiero-otio-release${{ github.ref }}.zip"
+          artifacts: "hiero-otio-release${{ github.event.inputs.tags }}.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
