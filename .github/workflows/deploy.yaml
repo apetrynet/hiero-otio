@@ -29,7 +29,7 @@ jobs:
           draft: true
           prerelease: false
 
-      - name: Archive Release for Nukepedia
+      - name: Create Release Archive for Nukepedia
         uses: thedoctor0/zip-release@master
         with:
            filename: 'hiero-otio-release${{ github.ref }}.zip'
