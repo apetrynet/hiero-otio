@@ -44,6 +44,6 @@ jobs:
           TAG_NAME: ${GITHUB_REF/refs\/tags\//}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./hiero-otio${{ tag_name }}.zip
-          asset_name: hiero-otio${{ tag_name }}.zip
+          asset_path: ./hiero-otio${{ env.TAG_NAME }}.zip
+          asset_name: hiero-otio${{ env.TAG_NAME }}.zip
           asset_content_type: application/zip
