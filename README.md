@@ -15,7 +15,18 @@ Import and export `.otio` files directly from Hiero or Nuke Studio
 * Linked audio/video when clip shares same media source
    
 
-## Install
+## Requirements
+
+Make sure you have OpenTimelineIO (OTIO) installed on your computer before you
+install the plugin. The easiest way to install OTIO is through pip.
+``` bash
+pip install opentimelineio
+```
+If you installed OTIO in another way, please make sure you have OTIO's 
+python package available in the `PYTHONPATH` environment variable.
+
+
+## Installation
 
 The easiest way to install the plugin is to unpack the contents to the `.nuke` 
 folder in your "HOME" directory.<br>
@@ -33,10 +44,6 @@ the full path of the folder containing the `Python` folder to the
 ```bash
 export HIERO_PLUGIN_PATH=/my/shared/plugin/folder
 ```
-
-### Note
-
-Make sure you have OpenTimelineIO available in `PYTHONPATH` before you launch.
 
 
 ## Usage OTIO Import
