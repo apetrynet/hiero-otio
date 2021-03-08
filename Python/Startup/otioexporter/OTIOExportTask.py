@@ -74,7 +74,7 @@ class OTIOExportTask(hiero.core.TaskBase):
         available_range = None
         if hiero_clip.mediaSource().isMediaPresent():
             start_time = otio.opentime.RationalTime(
-                hiero_clip.mediaSource().startTime(),
+                0,
                 source_rate
             )
             duration = otio.opentime.RationalTime(
