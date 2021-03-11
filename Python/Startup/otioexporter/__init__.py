@@ -1,5 +1,5 @@
-from OTIOExportTask import OTIOExportTask
-from OTIOExportUI import OTIOExportUI
+from .OTIOExportTask import OTIOExportTask, OTIOExportPreset
+from .OTIOExportUI import OTIOExportUI
 
 __all__ = [
     'OTIOExportTask',

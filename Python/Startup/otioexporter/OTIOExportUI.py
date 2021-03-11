@@ -1,5 +1,5 @@
 import hiero.ui
-import OTIOExportTask
+from . import OTIOExportTask, OTIOExportPreset
 
 try:
     # Hiero >= 11.x
@@ -20,7 +20,7 @@ class OTIOExportUI(hiero.ui.TaskUIBase):
         """Initialize"""
         hiero.ui.TaskUIBase.__init__(
             self,
-            OTIOExportTask.OTIOExportTask,
+            OTIOExportTask,
             preset,
             "OTIO Exporter"
         )
@@ -60,6 +60,6 @@ class OTIOExportUI(hiero.ui.TaskUIBase):
 
 
 hiero.ui.taskUIRegistry.registerTaskUI(
-    OTIOExportTask.OTIOExportPreset,
+    OTIOExportPreset,
     OTIOExportUI
 )

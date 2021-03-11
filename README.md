@@ -22,11 +22,21 @@ install the plugin. The easiest way to install OTIO is through pip.
 ``` bash
 pip install opentimelineio
 ```
+
+You may also install OpenTimelineIO by using the python version which ships
+with Hiero|NukeStudio. Replace the python version in the example below with the
+one you find in the applications root folder.
+
+```bash
+# Example using python 3 shipped with Nuke13+
+python3 -m pip install opentimelineio
+```
+
 If you installed OTIO in another way, please make sure you have OTIO's 
 python package available in the `PYTHONPATH` environment variable.
 
 
-## Installation
+## Plugin Installation
 
 The easiest way to install the plugin is to unpack the contents to the `.nuke` 
 folder in your "HOME" directory.<br>
@@ -44,7 +54,7 @@ the full path of the folder containing the `Python` folder to the
 ```bash
 export HIERO_PLUGIN_PATH=/my/shared/plugin/folder
 ```
-
+ 
 
 ## Usage OTIO Import
 
